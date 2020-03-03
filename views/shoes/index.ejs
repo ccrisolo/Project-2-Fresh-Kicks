@@ -6,29 +6,37 @@
     <title>Fresh Kicks Landing Page</title> -->
 
 <%- include('../partials/header') %>
+<h1>Welcome</h1>
+<a href="/shoes/new">Add New Shoe</a>
+<ul>
+    <% shoes.forEach(s => { %>
+        <li> <%= s.brand %> </li>
+        <li> <%= s.model %> </li>
+        <li> <%= s.retailPrice %> </li>
+        <li> <%= s.resalePrice %> </li>
+        <li> <%= s.reviews %> </li>
+        <li> <%= s.photo %> </li>
 
-    <!-- <style>
+    <% }) %>
+</ul>
+
+
+    <style>
         body {
             background-image: url(https://i.imgur.com/G8MZVti.png);
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center center;
             align-content: center;
+            background-color: white;
+            background-size: cover;
+            background-size: contain;
         }
-    </style> -->
-    <a href="" class="brand-logo left">Fresh Kicks</a>
-    <nav>
+    </style>
 
-        <ul class="right">
-            <li>
-                <% if (user) { %>
-                <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-                <% } else { %>
-                <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-                <% } %>
-            </li>
-        </ul>
-    </nav>
+
+
+
     <%- include('../partials/footer') %>
     <!-- </body>
 </html> -->

@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+<form id="new-shoe-form" action="/shoes/new" method="POST">
+    <label>Brand:</label>
+    <input type="text" name="brand">
+    <label>Model:</label>
+    <input type="text" name="model">
+    <label>Retail Price:</label>
+    <input type="number" name="retail price">
+    <label>Resale Price:</label>
+    <input type="number" name="resale price">
+    <label>Rating:</label>
+    <select name="rating">
+      <option value="dope">Dope</option>
+      <option value="not dope">Not Dope</option>
+    </select>
+    <input type="submit" value="Add Shoe">
+  </form>
+
+
+
+
+
+
+<%- include('../partials/footer') %>

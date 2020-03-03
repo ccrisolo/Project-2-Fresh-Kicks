@@ -9,7 +9,7 @@ const passport = require('passport');
 
 var indexRouter = require('./routes/index');
 var membersRouter = require('./routes/members');
-const shoesRouter = require('./routes/shoes')
+const shoesRouter = require('./routes/shoes');
 
 require('dotenv').config();
 
