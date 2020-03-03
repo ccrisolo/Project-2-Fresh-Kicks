@@ -5,10 +5,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
+const methodOverride = require('method-override');
 
 
 var indexRouter = require('./routes/index');
-var membersRouter = require('./routes/members');
 const shoesRouter = require('./routes/shoes');
 
 require('dotenv').config();
@@ -28,6 +28,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(methodOverride('_method'));
 
 app.use(session({
   secret: 'SEIRocks!',
@@ -39,8 +40,8 @@ app.use(passport.session());
 
 
 app.use('/', indexRouter);
-app.use('/', membersRouter);
 app.use('/shoes', shoesRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

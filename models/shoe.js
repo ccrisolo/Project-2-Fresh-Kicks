@@ -2,13 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema ({
-    content: {type: String},
-    rating: {type: Boolean, default: true}
+    reviews: {type: String},
+    rating: {type: String, default: 'Fresh'}
 }, {
   timestamps: true
 });
 
 const shoeSchema = new Schema({
+    user: {type: Schema.Types.ObjectId, ref: "Member"},
     brand: {type: String},
     model: {type: String}, 
     retailPrice: {type: Number},

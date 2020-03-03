@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Kicks Show Details</title>
+
+<%- include('../partials/header') %>
+<section id="show-page">
+    <ul>
+        <div>Brand:</div>
+        <div><%= s.brand %></div>
+        <div>Model:</div>
+        <div><%= s.model %></div>
+        <div>Retail Price:</div>
+        <div><%= s.retailPrice %></div>
+        <div>Resale Price:</div>
+        <div><%= s.resalePrice %></div>
+        <div>Reviews:</div>
+        <div><%= s.reviews %></div>
+        <div>Photo</div>
+        <div><%= s.photo %></div>
+    </ul>
+</section>
+
+<%- include('../partials/footer') %>

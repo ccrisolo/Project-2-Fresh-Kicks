@@ -5,11 +5,22 @@ module.exports = {
     index,
     new: newShoe,
     show,
-    create
+    create,
+    delete: deleteShoe,
+
 };
+
+function deleteShoe(req, res) {
+    console.log("SHOE ID: ")
+    Shoe.findByIdAndDelete(req.params.id, function(err, deletedShoe){
+        console.log("DELETED SHOE: ", deletedShoe  )
+        res.redirect('/shoes');
+    });
+}
 
 function index(req, res, next) {
    Shoe.find({}, function(err, shoes){
+       console.log(shoes)
        res.render('shoes/index', {title: 'All Shoes', shoes, user: req.user});
    }); 
 }
@@ -25,7 +36,7 @@ function show(req, res) {
 }
 
 function create(req, res) {
-    const Shoe = new Shoe(req.body);
+    const shoe = new Shoe(req.body);
     shoe.user = req.user._id;
     shoe.save(function(err) {
         if(err) {

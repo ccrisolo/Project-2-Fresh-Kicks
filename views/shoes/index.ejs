@@ -1,27 +1,41 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresh Kicks Landing Page</title> -->
+    <title>Fresh Kicks Landing Page</title>
 
-<%- include('../partials/header') %>
-<h1>Welcome</h1>
-<a href="/shoes/new">Add New Shoe</a>
-<ul>
-    <% shoes.forEach(s => { %>
+    <%- include('../partials/header') %>
+    <h1>Fresh Kicks</h1>
+    <a href="/shoes/new">Add New Shoe</a>
+    <ul>
+        <li>
+            <% shoes.forEach(function(s) { %>
+            <% if(user) { %>
+            <% if (user._id.toString() == s.user.toString()) { %>
+            <form action="/shoes/<%= s._id %>?_method=DELETE" class="delete-form" method="POST">
+                <button type="submit">X</button>
+            </form>
+            <% } else { %>
+            <% } %>
+        </li>
+        <a href="/shoes/<%= s._id %>">details</a>
         <li> <%= s.brand %> </li>
         <li> <%= s.model %> </li>
         <li> <%= s.retailPrice %> </li>
         <li> <%= s.resalePrice %> </li>
         <li> <%= s.reviews %> </li>
         <li> <%= s.photo %> </li>
+        <% } %>
+        <% }) %>
+    </ul>
 
-    <% }) %>
-</ul>
 
 
-    <style>
+
+
+    <!-- <style>
         body {
             background-image: url(https://i.imgur.com/G8MZVti.png);
             background-repeat: no-repeat;
@@ -32,7 +46,7 @@
             background-size: cover;
             background-size: contain;
         }
-    </style>
+    </style> -->
 
 
 
