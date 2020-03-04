@@ -18,6 +18,8 @@
         <div><%= shoe.resalePrice %></div>
         <div>Reviews:</div>
         <div><%= shoe.reviews %></div>
+        <div>Rating:</div>
+        <div><%= shoe.rating %></div>
         <div>Photo</div>
         <div><%= shoe.photo %></div>
     </ul>
@@ -39,6 +41,17 @@
     </select>
     <input type="submit" value="Update Shoe">
 </form>
+
+<form id="Add-Review-Form" action="/shoes/<%= shoe._id %>/reviews" method="POST">
+    <label>Add Review</label>
+    <textarea name="reviews"></textarea>
+    <label>Rating:</label>
+    <select name="rating">
+        <option value="fresh">Fresh</option>
+        <option value="not fresh">Not Fresh</option>
+    </select>
+    <button type="submit">Add Review</button>
+    </form>
 
 
 

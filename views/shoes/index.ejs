@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fresh Kicks Landing Page</title>
-    <link rel="stylesheet" href="/public/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
     <%- include('../partials/header') %>
@@ -23,39 +23,16 @@
             <% } %>
         </li>
         <a href="/shoes/<%= s._id %>">details</a>
-        <li>BRAND: <%= s.brand %> </li>
-        <li>MODEL: <%= s.model %> </li>
-        <li>RETAIL PRICE: <%= s.retailPrice %> </li>
-        <li>RESALE PRICE: <%= s.resalePrice %> </li>
-        <li>PHOTOS: <%= s.photo %> </li>
-        <li>REVIEWS: <%= s.reviews %> </li>
-        <form id="Add-Review-Form" action="/shoes/<%= s._id%>/reviews" method="POST">
-        <label>Add Review</label>
-        </form>
+        <li>Brand: <%= s.brand %> </li>
+        <li>Model: <%= s.model %> </li>
+        <li>Retail Price: <%= s.retailPrice %> </li>
+        <li>Resale Price: <%= s.resalePrice %> </li>
+        <li>Photos: <%= s.photo %> </li>
+        <li>Reviews: <%= s.reviews %> </li>
+        <li>Rating: <%= s.rating %> </li>
         <% } %>
         <% }) %>
     </ul>
 
 
-
-
-
-    <!-- <style>
-        body {
-            background-image: url(https://i.imgur.com/G8MZVti.png);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center center;
-            align-content: center;
-            background-color: white;
-            background-size: cover;
-            background-size: contain;
-        }
-    </style> -->
-
-
-
-
     <%- include('../partials/footer') %>
-    <!-- </body>
-</html> -->

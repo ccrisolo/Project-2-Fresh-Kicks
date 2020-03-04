@@ -21,7 +21,7 @@ function deleteShoe(req, res) {
 
 function index(req, res, next) {
    Shoe.find({}, function(err, shoes){
-       console.log(shoes)
+    //    console.log(shoes)
        res.render('shoes/index', {title: 'All Shoes', shoes, user: req.user});
    }); 
 }
@@ -32,6 +32,8 @@ function newShoe(req, res) {
 
 function show(req, res) {
     Shoe.findById(req.params.id, function(err, shoe) {
+        console.log(req.params.id);
+        console.log(req.params);
         res.render('shoes/show', {shoe, user: req.user})
     });
 }

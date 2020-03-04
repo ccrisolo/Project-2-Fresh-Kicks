@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema ({
     reviews: {type: String},
-    rating: {type: String, default: 'Fresh'}
+    rating: {type: Boolean, default: 'Fresh'}
 }, {
   timestamps: true
 });
