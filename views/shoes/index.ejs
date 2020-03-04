@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fresh Kicks Landing Page</title>
-
+    <link rel="stylesheet" href="/public/stylesheets/style.css">
+</head>
+<body>
     <%- include('../partials/header') %>
     <h1>Fresh Kicks</h1>
     <a href="/shoes/new">Add New Shoe</a>
@@ -21,12 +23,15 @@
             <% } %>
         </li>
         <a href="/shoes/<%= s._id %>">details</a>
-        <li> <%= s.brand %> </li>
-        <li> <%= s.model %> </li>
-        <li> <%= s.retailPrice %> </li>
-        <li> <%= s.resalePrice %> </li>
-        <li> <%= s.reviews %> </li>
-        <li> <%= s.photo %> </li>
+        <li>BRAND: <%= s.brand %> </li>
+        <li>MODEL: <%= s.model %> </li>
+        <li>RETAIL PRICE: <%= s.retailPrice %> </li>
+        <li>RESALE PRICE: <%= s.resalePrice %> </li>
+        <li>PHOTOS: <%= s.photo %> </li>
+        <li>REVIEWS: <%= s.reviews %> </li>
+        <form id="Add-Review-Form" action="/shoes/<%= s._id%>/reviews" method="POST">
+        <label>Add Review</label>
+        </form>
         <% } %>
         <% }) %>
     </ul>

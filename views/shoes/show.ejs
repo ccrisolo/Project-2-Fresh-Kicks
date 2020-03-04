@@ -9,18 +9,37 @@
 <section id="show-page">
     <ul>
         <div>Brand:</div>
-        <div><%= s.brand %></div>
+        <div><%= shoe.brand %></div>
         <div>Model:</div>
-        <div><%= s.model %></div>
+        <div><%= shoe.model %></div>
         <div>Retail Price:</div>
-        <div><%= s.retailPrice %></div>
+        <div><%= shoe.retailPrice %></div>
         <div>Resale Price:</div>
-        <div><%= s.resalePrice %></div>
+        <div><%= shoe.resalePrice %></div>
         <div>Reviews:</div>
-        <div><%= s.reviews %></div>
+        <div><%= shoe.reviews %></div>
         <div>Photo</div>
-        <div><%= s.photo %></div>
+        <div><%= shoe.photo %></div>
     </ul>
 </section>
+
+<form id="edit-shoe-form" action="/shoes/<%= shoe._id %>/update/" method="POST">
+    <label>Brand:</label>
+    <input type="text" name="brand" value="<%= shoe.brand %>">
+    <label>Model:</label>
+    <input type="text" name="model" value="<%= shoe.model %>">
+    <label>Retail Price:</label>
+    <input type="number" name="retailPrice" value="<%= shoe.retailPrice %>">
+    <label>Resale Price:</label> 
+    <input type="number" name="resalePrice" value="<%= shoe.resalePrice %>">
+    <label>Rating:</label>
+    <select name="rating">
+      <option value="fresh">Fresh</option>
+      <option value="not fresh">Not Fresh</option>
+    </select>
+    <input type="submit" value="Update Shoe">
+</form>
+
+
 
 <%- include('../partials/footer') %>

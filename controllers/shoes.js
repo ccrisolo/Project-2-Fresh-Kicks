@@ -7,6 +7,7 @@ module.exports = {
     show,
     create,
     delete: deleteShoe,
+    edit
 
 };
 
@@ -37,6 +38,7 @@ function show(req, res) {
 
 function create(req, res) {
     const shoe = new Shoe(req.body);
+    console.log(req.body)
     shoe.user = req.user._id;
     shoe.save(function(err) {
         if(err) {
@@ -46,5 +48,13 @@ function create(req, res) {
             res.redirect('/shoes')
         }
     })
+}
+
+function edit(req, res) {
+    Shoe.findByIdAndUpdate(req.params.id, req.body, function(err, edit) {
+        //verifies that shoe is owned by user
+        console.log("edit shoe: ", edit)
+        res.redirect('/shoes');
+    });
 }
     
