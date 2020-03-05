@@ -1,16 +1,30 @@
-<ul class=“right”>
-    <li>
-        <% if (user) { %>
-        <span><%= user.name %></span>
-        <!-- <a href='/logout'>LOG OUT BUTTON</a> -->
-        <form action="/logout" method='GET'>
-            <input type="submit" value="LOGOUT">
-        </form>
-        <% } else { %>
-        <form action="/auth/google" method='GET'>
-            <input type="submit" value="LOGIN">
-        </form>
-        <!-- <a href=“/auth/google”><i class=“material-icons left”>vpn_key</i>Login with Google</a> -->
-        <% } %>
-    </li>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Kicks</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    
+</body>
+</html>
+
+    <ul class=“right”>
+        <li>
+            <% if (user) { %>
+                <span><%= user.name %></span>
+                <!-- <a href='/logout'>LOG OUT BUTTON</a> -->
+                <form action="/logout" method='GET'>
+                    <input type="submit" value="LOGOUT">
+                </form>
+                <% } else { %>
+                    <form action="/auth/google" method='GET'>
+                        <input type="submit" value="LOGIN">
+                    </form>
+                    <!-- <a href=“/auth/google”><i class=“material-icons left”>vpn_key</i>Login with Google</a> -->
+                    <% } %>
+                </li>
+            </ul>
+        </nav>

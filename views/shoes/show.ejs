@@ -16,12 +16,8 @@
         <div><%= shoe.retailPrice %></div>
         <div>Resale Price:</div>
         <div><%= shoe.resalePrice %></div>
-        <div>Reviews:</div>
-        <div><%= shoe.reviews %></div>
-        <div>Rating:</div>
-        <div><%= shoe.rating %></div>
         <div>Photo</div>
-        <div><%= shoe.photo %></div>
+        <div><img src="<%= shoe.photo %> "></div>
     </ul>
 </section>
 
@@ -31,28 +27,17 @@
     <label>Model:</label>
     <input type="text" name="model" value="<%= shoe.model %>">
     <label>Retail Price:</label>
-    <input type="number" name="retailPrice" value="<%= shoe.retailPrice %>">
-    <label>Resale Price:</label> 
-    <input type="number" name="resalePrice" value="<%= shoe.resalePrice %>">
-    <label>Rating:</label>
-    <select name="rating">
-      <option value="fresh">Fresh</option>
-      <option value="not fresh">Not Fresh</option>
-    </select>
+    <input type="number" step="any" name="retailPrice" value="<%= shoe.retailPrice %>">
+    <label>Resale Price: $</label> 
+    <input type="number" step="any" name="resalePrice" value="$ <%= shoe.resalePrice %>">
+    <label>Photo:</label>
+    <input type="text" name="photo" value="<%= shoe.photo %>">
     <input type="submit" value="Update Shoe">
 </form>
 
-<form id="Add-Review-Form" action="/shoes/<%= shoe._id %>/reviews" method="POST">
-    <label>Add Review</label>
-    <textarea name="reviews"></textarea>
-    <label>Rating:</label>
-    <select name="rating">
-        <option value="fresh">Fresh</option>
-        <option value="not fresh">Not Fresh</option>
-    </select>
-    <button type="submit">Add Review</button>
-    </form>
-
+<form action="/shoes">
+<input type="submit" value="Back to Main Page">
+</form>
 
 
 <%- include('../partials/footer') %>

@@ -7,6 +7,7 @@
     <title>Fresh Kicks Landing Page</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
+
 <body>
     <%- include('../partials/header') %>
     <h1>Fresh Kicks</h1>
@@ -22,17 +23,28 @@
             <% } else { %>
             <% } %>
         </li>
-        <a href="/shoes/<%= s._id %>">details</a>
+        <a href="/shoes/<%= s._id %>">See Details</a>
         <li>Brand: <%= s.brand %> </li>
         <li>Model: <%= s.model %> </li>
-        <li>Retail Price: <%= s.retailPrice %> </li>
-        <li>Resale Price: <%= s.resalePrice %> </li>
-        <li>Photos: <%= s.photo %> </li>
-        <li>Reviews: <%= s.reviews %> </li>
-        <li>Rating: <%= s.rating %> </li>
+        <div>Photos:
+            <img src="<%= s.photo %> " alt="">
+        </div>
+        <label>Reviews:</label>
+        <% if(s.reviews.length) { %>
+            <% s.reviews.forEach(r => { %>
+            <li> <%= r.reviews %> </li>    
+           <% }) %>
+      <%  } %>
         <% } %>
+        <li>
+            <form id="review-form" action="/shoes/<%= s._id %>/reviews" method="POST">
+                <textarea name="reviews"></textarea>
+                <input type="submit" value="Add Review">
+            </form>
+        </li>
         <% }) %>
     </ul>
+
 
 
     <%- include('../partials/footer') %>

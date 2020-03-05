@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Kicks Reviews Form</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <%- include('../partials/header') %>    
+
+<form id="Add-Review-Form" action="/shoes/<%= shoe._id %>/reviews" method="POST">
+    <label>Add Review</label>
+    <textarea name="reviews"></textarea>
+    <label>Rating:</label>
+    <select name="rating">
+        <option value="fresh">Fresh</option>
+        <option value="not fresh">Not Fresh</option>
+    </select>
+    <button type="submit">Add Review</button> 
+    </form>
+
+
+    <%- include('../partials/footer') %>

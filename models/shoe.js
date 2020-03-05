@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema ({
-    reviews: {type: String},
-    rating: {type: Boolean, default: 'Fresh'}
+    reviews: String
 }, {
   timestamps: true
 });
@@ -16,7 +15,7 @@ const shoeSchema = new Schema({
     resalePrice: {type: Number},
     reviews: [reviewSchema],
     googleId: String,
-    photos: {type: String}//use URL address to upload 
+    photo: {type: String}//use URL address to upload 
 }, {
   timestamps: true
 });
