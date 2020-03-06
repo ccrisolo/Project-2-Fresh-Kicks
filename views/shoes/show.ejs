@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fresh Kicks Show Details</title>
 
-<%- include('../partials/header') %>
-<section id="show-page">
-    <ul>
-        <div>Brand:</div>
-        <div><%= shoe.brand %></div>
-        <div>Model:</div>
-        <div><%= shoe.model %></div>
-        <div>Retail Price:</div>
-        <div><%= shoe.retailPrice %></div>
-        <div>Resale Price:</div>
-        <div><%= shoe.resalePrice %></div>
-        <div>Photo</div>
-        <div><img src="<%= shoe.photo %> "></div>
-    </ul>
-</section>
+    <%- include('../partials/header') %>
+    <section id="show-page">
+        <form action="/shoes">
+            <input class="input" type="submit" value="Back to Main Page">
+        </form>
+        <form id="edit-shoe-form" action="/shoes/<%= shoe._id %>/update/" method="POST">
+            <label>Brand:</label>
+            <input class="input" type="text" name="brand" value="<%= shoe.brand %>">
+            <label>Model:</label>
+            <input class="input" type="text" name="model" value="<%= shoe.model %>">
+            <label>Retail Price: $</label>
+            <input class="input" type="number" step="any" name="retailPrice" value="<%= shoe.retailPrice %>">
+            <label>Resale Price: $</label>
+            <input class="input" type="number" step="any" name="resalePrice" value="$ <%= shoe.resalePrice %>">
+            <label>Photo:</label>
+            <input class="input" type="text" name="photo" value="<%= shoe.photo %>">
+            <input class="input" type="submit" value="Update Shoe">
+        </form>
+        
 
-<form id="edit-shoe-form" action="/shoes/<%= shoe._id %>/update/" method="POST">
-    <label>Brand:</label>
-    <input type="text" name="brand" value="<%= shoe.brand %>">
-    <label>Model:</label>
-    <input type="text" name="model" value="<%= shoe.model %>">
-    <label>Retail Price:</label>
-    <input type="number" step="any" name="retailPrice" value="<%= shoe.retailPrice %>">
-    <label>Resale Price: $</label> 
-    <input type="number" step="any" name="resalePrice" value="$ <%= shoe.resalePrice %>">
-    <label>Photo:</label>
-    <input type="text" name="photo" value="<%= shoe.photo %>">
-    <input type="submit" value="Update Shoe">
-</form>
+        <div id="show-page-div">
+            <div>Brand: <%= shoe.brand %></div>
 
-<form action="/shoes">
-<input type="submit" value="Back to Main Page">
-</form>
+            <div>Model: <%= shoe.model %></div>
 
+            <div>Retail Price: $<%= shoe.retailPrice %></div>
 
-<%- include('../partials/footer') %>
+            <div>Resale Price: $<%= shoe.resalePrice %></div>
+
+            <div>Review:<img src="<%= shoe.photo %> "></div>
+
+            
+        </div>
+    </section>
+    <section id="show-reviews">
+        <% shoe.reviews.forEach(function(review) { %>
+        <p><%= review.reviews %></p>
+        <% }) %>
+    </section>
+
+    <%- include('../partials/footer') %>

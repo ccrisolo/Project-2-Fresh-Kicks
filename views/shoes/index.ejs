@@ -10,41 +10,44 @@
 
 <body>
     <%- include('../partials/header') %>
-    <h1>Fresh Kicks</h1>
-    <a href="/shoes/new">Add New Shoe</a>
-    <ul>
-        <li>
-            <% shoes.forEach(function(s) { %>
-            <% if(user) { %>
-            <% if (user._id.toString() == s.user.toString()) { %>
-            <form action="/shoes/<%= s._id %>?_method=DELETE" class="delete-form" method="POST">
-                <button type="submit">X</button>
-            </form>
-            <% } else { %>
-            <% } %>
-        </li>
-        <a href="/shoes/<%= s._id %>">See Details</a>
-        <li>Brand: <%= s.brand %> </li>
-        <li>Model: <%= s.model %> </li>
-        <div>Photos:
-            <img src="<%= s.photo %> " alt="">
-        </div>
-        <label>Reviews:</label>
-        <% if(s.reviews.length) { %>
-            <% s.reviews.forEach(r => { %>
-            <li> <%= r.reviews %> </li>    
-           <% }) %>
-      <%  } %>
-        <% } %>
-        <li>
-            <form id="review-form" action="/shoes/<%= s._id %>/reviews" method="POST">
-                <textarea name="reviews"></textarea>
-                <input type="submit" value="Add Review">
-            </form>
-        </li>
+    
+    <div class="kicks-container">
+
+        <% shoes.forEach(function(s) { %>
+            <div class="kicks">
+                <div class="sneakerrow">
+                    <% if(user) { %>
+                        <% if (user._id.toString() == s.user.toString()) { %>
+                            <form action="/shoes/<%= s._id %>?_method=DELETE" class="delete-form" method="POST">
+                                <button id="delete-button" type="submit">X</button>
+                            </form>
+                        <% } %>
+                    <% } %>
+                <div class="sneakerdetails">
+                    <div class="example">
+                        <a href="/shoes/<%= s._id %>"><img src="<%= s.photo %> " alt="Click For Details"></a>
+                        <div class="content">
+                            <div class="text"></div>
+                        </div>
+                    </div>
+                </div>
+                <label>Reviews:</label>
+                <% if(s.reviews.length) { %>
+                    <% s.reviews.forEach(r => { %>
+                        <%= r.reviews %>
+                    <% }) %>
+                <% } %>
+                </div>
+                <div class="review-form">
+                    <div>
+                        <form id="review-form" action="/shoes/<%= s._id %>/reviews" method="POST">
+                            <textarea name="reviews"></textarea>
+                            <input id="review-button" type="submit" value="Add Review">
+                        </form>
+                    </div>
+                </div>
+            </div>
         <% }) %>
-    </ul>
-
-
+    </div>
 
     <%- include('../partials/footer') %>

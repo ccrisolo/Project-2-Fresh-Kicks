@@ -1,21 +1,25 @@
 <%- include('../partials/header') %>
-<form id="new-shoe-form" action="/shoes/new" method="POST">
-    <label>Brand:</label>
-    <input type="text" name="brand">
-    <label>Model:</label>
-    <input type="text" name="model">
-    <label>Retail Price:</label>
-    <input type="number" name="retailPrice">
-    <label>Resale Price:</label>
-    <input type="number" name="resalePrice">
-    <label>Photo:</label>
-    <input type="text" name="photo">
-    <input type="submit" value="Add Shoe">
-  </form>
-
-
-
-
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id="new-shoe-form">
+<form action="/shoes/new" method="POST">
+  <label>Brand:</label>
+  <input class="input" type="text" name="brand">
+  <label>Model:</label>
+  <input class="input" type="text" name="model">
+  <label>Retail Price: $</label>
+  <input class="input" type="number" name="retailPrice">
+  <label>Resale Price: $</label>
+  <input class="input" type="number" name="resalePrice">
+  <label>Photo:</label>
+  <input class="input" type="text" name="photo">
+  <input class="input" type="submit" value="Add Shoe">
+</form>
+</div>
+<form action="/shoes">
+  <input class="input" type="submit" value="Back to Main Page">
+</form>
 <%- include('../partials/footer') %>

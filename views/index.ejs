@@ -1,15 +1,40 @@
-<%- include('./partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Kicks</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="nav-wrapper">
+
+        <% if (user) { %>
+        <span><%= user.name %></span>
+        <!-- <a href='/logout'>LOG OUT BUTTON</a> -->
+        <form action="/logout" method='GET'>
+            <input type="submit" value="LOGOUT">
+        </form>
+        <% } else { %>
+        <form action="/auth/google" method='GET'>
+            <input id="login" type="image" src="https://i.imgur.com/rPVMYLf.png">
+        </form>
+        <!-- <a href=“/auth/google”><i class=“material-icons left”>vpn_key</i>Login with Google</a> -->
+        <% } %>
+
+    </div>
 
     <style>
         body {
-            background-image: url(https://i.imgur.com/G8MZVti.png);
+            background-image: url(https://i.imgur.com/IHpmKWE.png);
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center center;
             align-content: center;
             background-color: white;
         }
-    </style> 
+    </style>
 
     <%- include('./partials/footer') %>
