@@ -24,6 +24,9 @@ JavaScipt, HTML, CSS, MongoDB, Express, Node.JS, Mongoose, Atlas
 [Click for Trello]: https://trello.com/b/N5I9TDga/sei-project-2
 [Click for Trello]
 
+[Click for Github]: https://github.com/ccrisolo/Project-2-Fresh-Kicks.git
+[Click for Github]
+
 ## Next Steps
 - Ability to buy and sell shoes with other members.
 - Ability to donate money from sales to charity.
