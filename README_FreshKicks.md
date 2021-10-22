@@ -1,8 +1,8 @@
-# Fresh Kicks Photo App
+# Foodivity Food & Activity Tracking App
 
 ## Description
 
-#####This photo app is a place for shoe enthusiasts to view and upload their favorite shoes. Users can fill out details of each shoe such as the brand, model, retail price, and resale price.  Additionally users can leave reviews on shoes uploaded from other users. This  app is still in beta testing. The overall goal of this app is to allow users to sell their shoes to other members with the intent of donating the money to the users charity of choice.  Additional features listed in the Next Steps section at the bottom of this document. Enjoy the pictures of some of the worlds rarest shoes and feel free to upload your favorites!
+#####Foodivity is your personal food and activity logging app. Created for people looking  to track their food intake, Foodivity is an easy way to log food, calories and activites in order to get a better picture of what we put in our body on a regular basis. Users can post a profile photo and photos of each meal. Each user is given an estimated suggested calories per day based off of their profile info.  
 
 ## Screenshots
 
@@ -15,7 +15,7 @@
 [img3]: https://i.imgur.com/RgD4uCv.png![img3]
 
 ## Technologies Used
-JavaScipt, HTML, CSS, MongoDB, Express, Node.JS, Mongoose, Atlas
+Python, Django, Postgreql, CSS, HTML, Heroku, Amazon AWS 
 
 ## Getting Started
 [Click for Heroku]:https://fresh-kicks.herokuapp.com/
